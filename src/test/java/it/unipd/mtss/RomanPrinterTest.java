@@ -2,7 +2,11 @@
 // Andrea Menegaldo 2116426
 // Davide Menegaldo 2147950
 ////////////////////////////////////////////////////////////////////
-# Roman Number
+package it.unipd.mtss;
 
-Progetto Maven che implementa un convertitore da numeri interi (1-1000)
-a numeri romani e una stampa in formato ASCII art.
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class RomanPrinterTest {
+
+}

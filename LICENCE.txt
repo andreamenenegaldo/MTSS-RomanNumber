@@ -2,7 +2,3 @@
 // Andrea Menegaldo 2116426
 // Davide Menegaldo 2147950
 ////////////////////////////////////////////////////////////////////
-# Roman Number
-
-Progetto Maven che implementa un convertitore da numeri interi (1-1000)
-a numeri romani e una stampa in formato ASCII art.
