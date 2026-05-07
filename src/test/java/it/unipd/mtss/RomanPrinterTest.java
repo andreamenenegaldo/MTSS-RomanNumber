@@ -7,7 +7,7 @@ public class RomanPrinterTest {
 
     @Test
     public void test1to100_validity() {
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i <= 20; i++) {
             String result = RomanPrinter.print(i);
 
             // non deve essere null o vuoto
