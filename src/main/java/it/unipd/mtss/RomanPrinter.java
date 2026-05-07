@@ -6,40 +6,79 @@ package it.unipd.mtss;
 
 public class RomanPrinter {
 
-    public static String print(final int num) {
+    public static String print(int num) {
         return printAsciiArt(IntegerToRoman.convert(num));
     }
 
-    private static String printAsciiArt(final String romanNumber) {
+    private static String printAsciiArt(String romanNumber) {
+        StringBuilder asciiArt = new StringBuilder();
 
-        switch (romanNumber) {
+        String[][] asciiLetters = {
+                {
+                        "  __  __ ",
+                        "  _____  ",
+                        "   _____ ",
+                        "  _      ",
+                        " __   __",
+                        " __      __",
+                        "  _____ "
+                },
+                {
+                        " |  \\/  |",
+                        " |  __ \\ ",
+                        "  / ____|",
+                        " | |     ",
+                        " \\ \\ / /",
+                        " \\ \\    / /",
+                        " |_   _|"
+                },
+                {
+                        " | \\  / |",
+                        " | |  | |",
+                        " | |     ",
+                        " | |     ",
+                        "  \\ V / ",
+                        "  \\ \\  / / ",
+                        "   | |  "
+                },
+                {
+                        " | |\\/| |",
+                        " | |  | |",
+                        " | |     ",
+                        " | |     ",
+                        "   > <  ",
+                        "   \\ \\/ /  ",
+                        "   | |  "
+                },
+                {
+                        " | |  | |",
+                        " | |__| |",
+                        " | |____ ",
+                        " | |____ ",
+                        "  / . \\ ",
+                        "    \\  /   ",
+                        "  _| |_ "
+                },
+                {
+                        " |_|  |_|",
+                        " |_____/ ",
+                        "  \\_____|",
+                        " |______|",
+                        " /_/ \\_\\",
+                        "     \\/    ",
+                        " |_____|"
+                }
+        };
 
-            case "I":
-                return " _____ \n"
-                        + "|_   _|\n"
-                        + "  | |  \n"
-                        + "  | |  \n"
-                        + " _| |_ \n"
-                        + "|_____|\n";
-
-            case "II":
-                return " _____   _____ \n"
-                        + "|_   _| |_   _|\n"
-                        + "  | |     | |  \n"
-                        + "  | |     | |  \n"
-                        + " _| |_   _| |_ \n"
-                        + "|_____| |_____|\n";
-
-            case "III":
-                return " _____   _____   _____ \n"
-                        + "|_   _| |_   _| |_   _|\n"
-                        + "  | |     | |     | |  \n"
-                        + "  | |     | |     | |  \n"
-                        + " _| |_   _| |_   _| |_ \n"
-                        + "|_____| |_____| |_____|\n";
-
-            default:
-                return romanNumber;
+        for (int z = 0; z < 6; z++) {
+            for (char c : romanNumber.toCharArray()) {
+                String roman = "MDCLXVI";
+                int index = roman.indexOf(c);
+                asciiArt.append(asciiLetters[z][index]);
+            }
+            asciiArt.append("\n");
         }
+
+        return asciiArt.toString();
     }
 }
