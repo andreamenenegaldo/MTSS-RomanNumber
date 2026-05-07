@@ -20,7 +20,9 @@ public class IntegerToRomanTest {
         "19, XIX", "20, XX", "21, XXI", "22, XXII", "23, XXIII", "24, XXIV",
         "25, XXV", "26, XXVI", "27, XXVII", "28, XXVIII", "29, XXIX", "30, XXX",
         "40, XL", "41, XLI", "42, XLII", "43, XLIII", "44, XLIV", "45, XLV",
-        "49, XLIX", "50, L"
+        "49, XLIX", "50, L", "51, LI", "52, LII", "53, LIII", "54, LIV",
+        "55, LV", "59, LIX", "60, LX", "70, LXX", "80, LXXX", "89, LXXXIX",
+        "90, XC", "91, XCI", "99, XCIX", "100, C"
     })
     void convert_returnsCorrectRomanNumeral(int input, String expected) {
         // Arrange - input e expected dal @CsvSource
