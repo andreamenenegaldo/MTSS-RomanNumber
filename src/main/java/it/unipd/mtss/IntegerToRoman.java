@@ -7,17 +7,17 @@ package it.unipd.mtss;
 public class IntegerToRoman {
 
     private static final int[] VALUES = {
-            5, 4, 1
+            10, 9, 5, 4, 1
     };
 
     private static final String[] SYMBOLS = {
-            "V", "IV", "I"
+            "X", "IX", "V", "IV", "I"
     };
 
     public static String convert(int number) {
-        if (number < 1 || number > 6) {
+        if (number < 1 || number > 10) {
             throw new IllegalArgumentException(
-                    "Number must be between 1 and 6, got: " + number);
+                    "Number must be between 1 and 10, got: " + number);
         }
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < VALUES.length; i++) {
