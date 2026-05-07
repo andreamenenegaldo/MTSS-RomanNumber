@@ -32,3 +32,13 @@ jobs:
       # Step 3: Analisi statica - fase package
       - name: Static analysis
         run: mvn package
+
+      # Step 4: Build and test - fase verify
+      - name: Build and test
+        run: mvn verify
+
+      # Step 5: Coverage report (Coveralls)
+      - name: Coveralls
+        uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
