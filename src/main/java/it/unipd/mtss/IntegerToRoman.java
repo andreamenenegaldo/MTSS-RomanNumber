@@ -15,9 +15,9 @@ public class IntegerToRoman {
     };
 
     public static String convert(int number) {
-        if (number < 1 || number > 10) {
+        if (number < 1 || number > 20) {
             throw new IllegalArgumentException(
-                    "Number must be between 1 and 10, got: " + number);
+                    "Number must be between 1 and 20, got: " + number);
         }
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < VALUES.length; i++) {
