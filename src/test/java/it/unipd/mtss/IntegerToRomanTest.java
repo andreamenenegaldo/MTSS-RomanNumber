@@ -1,0 +1,67 @@
+////////////////////////////////////////////////////////////////////
+// Andrea Menegaldo 2116426
+// Davide Menegaldo 2147950
+////////////////////////////////////////////////////////////////////
+package it.unipd.mtss;
+
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+public class IntegerToRomanTest {
+
+    @ParameterizedTest
+    @CsvSource({
+        "1, I", "2, II", "3, III", "4, IV", "5, V", "6, VI",
+        "7, VII", "8, VIII", "9, IX", "10, X", "11, XI", "12, XII",
+        "13, XIII", "14, XIV", "15, XV", "16, XVI", "17, XVII", "18, XVIII",
+        "19, XIX", "20, XX", "21, XXI", "22, XXII", "23, XXIII", "24, XXIV",
+        "25, XXV", "26, XXVI", "27, XXVII", "28, XXVIII", "29, XXIX", "30, XXX",
+        "40, XL", "41, XLI", "42, XLII", "43, XLIII", "44, XLIV", "45, XLV",
+        "49, XLIX", "50, L", "51, LI", "52, LII", "53, LIII", "54, LIV",
+        "55, LV", "59, LIX", "60, LX", "70, LXX", "80, LXXX", "89, LXXXIX",
+        "90, XC", "91, XCI", "99, XCIX", "100, C", "101, CI", "200, CC",
+        "300, CCC", "400, CD", "500, D", "501, DI", "600, DC", "700, DCC",
+        "800, DCCC", "900, CM", "990, CMXC", "999, CMXCIX", "1000, M"
+    })
+    void convert_returnsCorrectRomanNumeral(int input, String expected) {
+        // Arrange - input e expected dal @CsvSource
+
+        // Act
+        String result = IntegerToRoman.convert(input);
+
+        // Assert
+        assertEquals(expected, result);
+    }
+    @Test
+    void convert_throwsExceptionForZero() {
+        // Arrange
+        int number = 0;
+
+        // Act & Assert
+        assertThrows(IllegalArgumentException.class,
+            () -> IntegerToRoman.convert(number));
+    }
+
+    @Test
+    void convert_throwsExceptionForNegativeNumber() {
+        // Arrange
+        int number = -1;
+
+        // Act & Assert
+        assertThrows(IllegalArgumentException.class,
+            () -> IntegerToRoman.convert(number));
+    }
+
+    @Test
+    void convert_throwsExceptionForNumberGreaterThan1000() {
+        // Arrange
+        int number = 1001;
+
+        // Act & Assert
+        assertThrows(IllegalArgumentException.class,
+            () -> IntegerToRoman.convert(number));
+    }
+}
