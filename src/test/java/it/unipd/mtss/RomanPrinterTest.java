@@ -6,8 +6,8 @@ import static org.junit.jupiter.api.Assertions.*;
 public class RomanPrinterTest {
 
     @Test
-    public void test1to100_validity() {
-        for (int i = 1; i <= 100; i++) {
+    public void test1to500_validity() {
+        for (int i = 1; i <= 500; i++) {
             String result = RomanPrinter.print(i);
 
             // non deve essere null o vuoto

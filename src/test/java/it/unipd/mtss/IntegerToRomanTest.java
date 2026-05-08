@@ -22,7 +22,8 @@ public class IntegerToRomanTest {
         "40, XL", "41, XLI", "42, XLII", "43, XLIII", "44, XLIV", "45, XLV",
         "49, XLIX", "50, L", "51, LI", "52, LII", "53, LIII", "54, LIV",
         "55, LV", "59, LIX", "60, LX", "70, LXX", "80, LXXX", "89, LXXXIX",
-        "90, XC", "91, XCI", "99, XCIX", "100, C"
+        "90, XC", "91, XCI", "99, XCIX", "100, C", "101, CI", "200, CC",
+        "300, CCC", "400, CD", "500, D"
     })
     void convert_returnsCorrectRomanNumeral(int input, String expected) {
         // Arrange - input e expected dal @CsvSource
