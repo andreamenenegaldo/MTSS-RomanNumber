@@ -35,4 +35,33 @@ public class IntegerToRomanTest {
         // Assert
         assertEquals(expected, result);
     }
+    @Test
+    void convert_throwsExceptionForZero() {
+        // Arrange
+        int number = 0;
+
+        // Act & Assert
+        assertThrows(IllegalArgumentException.class,
+            () -> IntegerToRoman.convert(number));
+    }
+
+    @Test
+    void convert_throwsExceptionForNegativeNumber() {
+        // Arrange
+        int number = -1;
+
+        // Act & Assert
+        assertThrows(IllegalArgumentException.class,
+            () -> IntegerToRoman.convert(number));
+    }
+
+    @Test
+    void convert_throwsExceptionForNumberGreaterThan1000() {
+        // Arrange
+        int number = 1001;
+
+        // Act & Assert
+        assertThrows(IllegalArgumentException.class,
+            () -> IntegerToRoman.convert(number));
+    }
 }
